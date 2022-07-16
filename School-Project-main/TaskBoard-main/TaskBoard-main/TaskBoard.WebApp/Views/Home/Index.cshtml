@@ -1,0 +1,78 @@
+﻿@model HomeViewModel
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<section class="home-page">
+    @if (!this.User.Identity.IsAuthenticated)
+    {
+        <h1 class="text-center">Your Task App</h1>
+        <hr class="hr-2 bg-dark" />
+        <h3 class="mt-4"><a class="font-weight-bold" href="/Identity/Account/Login">Login</a> to start creating tasks.</h3>
+        
+        <h3 class="mt-4"><a class="font-weight-bold" href="/Identity/Account/Register">Register</a> if you don't have an account.</h3>
+    }
+    else
+    {
+        <h1 class="text-center">Welcome, @this.User.Identity.Name</h1>
+        <hr class="hr-2 bg-secondary" />
+        <h4 class="mt-4 text-center">Your Tasks Here</h4>
+    }
+    <span class="boardSpan">Tasks: <b>@Model.AllTasksCount</b></span>
+    <ul>
+        @foreach (var board in Model.BoardsWithTasksCount)
+        {
+            <li>
+                <span class="boardSpan">@board.BoardName: <b>@board.TasksCount</b></span>
+            </li>
+        }
+    </ul>
+    <br />
+    <h5>Created Users: <b>@Model.CreatedUsersCount</b></h5>
+    @if (Model.UserOpenTasksCount > -1)
+    {
+        <h5>You have: <b>@Model.UserOpenTasksCount</b> tasks open</h5>
+    }
+    @if (Model.UserInProgressTasksCount > -1)
+    {
+        <h5>You have: <b>@Model.UserInProgressTasksCount</b> tasks in progress</h5>
+    }
+    @if (Model.UserDoneTasksCount > -1)
+    {
+        <h5>You have: <b>@Model.UserDoneTasksCount</b> tasks done</h5>
+    }
+    <h5>Total Projects: <b>@Model.TotalProjects</b></h5>
+</section>
+
+@if (this.User.Identity.IsAuthenticated)
+{
+    <div class="home-page-icons">
+        <a asp-area="" asp-controller="Projects" asp-action="All">
+            <span class="icon">🖹</span>
+            <span>Projects</span>
+        </a>
+        <a asp-area="" asp-controller="Projects" asp-action="Create">
+            <span class="icon">✚</span>
+            <span>New Project</span>
+        </a>
+        <a asp-area="" asp-controller="Boards">
+            <span class="icon">🖹</span>
+            <span>Task Board</span>
+        </a>
+        <a asp-area="" asp-controller="Tasks" asp-action="Create">
+            <span class="icon">✚</span>
+            <span>New Task</span>
+        </a>
+        <a asp-area="" asp-controller="Tasks" asp-action="Search">
+            <span class="icon">⌕</span>
+            <span>Search </span>
+        </a>
+    </div>
+}
+
+
+
+
+
+

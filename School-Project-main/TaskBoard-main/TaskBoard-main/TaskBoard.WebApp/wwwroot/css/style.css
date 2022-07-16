@@ -1,0 +1,268 @@
+﻿body {
+    font-family: 'Inconsolata', monospace;
+    
+    background-color: rgb(155, 155, 155);
+}
+
+.navbar {
+    background-color: rgba(169, 108, 2, 0.603);
+    
+}
+
+.footer {
+    background-color: rgba(118, 80, 98, 0.963);
+    border-radius: 5px;
+    border: 1px solid rgb(230, 0, 111);
+}
+
+@media (min-width: 0px) {
+    .container {
+        max-width: 100%;
+    }
+}
+
+.btn {
+    padding: .375rem .55rem;
+}
+
+.moved-right {
+    margin: 10px 0px 0px 180px;
+}
+
+.boardSpan {
+    font-size: 18px;
+}
+
+section.home-page {
+    background: rgba(169, 108, 2, 0.637);
+    padding: 20px;
+    border-radius: 5px;
+    border: 1px solid rgb(230, 0, 111);
+    position: initial;
+}
+
+div.home-page-icons a {
+    color: rgb(0, 0, 0);
+    background: rgb(169, 108, 2);
+    text-decoration: none;
+    padding: 0px 10px;
+    border-radius: 5px;
+    border: 1px solid rgb(230, 0, 111);
+    margin: 10px 10px 0px 0px;
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 18px;
+    width: 150px;
+    height: 100%;
+}
+
+    div.home-page-icons a span.icon {
+        display: block;
+        font-size: 3em;
+    }
+
+    div.home-page-icons a:hover {
+        background: rgb(230, 0, 111 );
+        color: white;
+    }
+
+aside {
+    grid-area: aside;
+    background: rgb(169, 108, 2);
+    border-radius: 3px;
+    border: 1px solid rgb(230, 0, 111);
+    position: absolute;
+    font-size: 18px;
+    top: 103px;
+    bottom: 75px;
+    left: 0px;
+}
+
+    aside ul {
+        list-style-type: none;
+        margin: 0px;
+        padding: 10px;
+    }
+
+        aside ul a {
+            display: block;
+            padding: 5px;
+            text-decoration: none;
+            color: rgb(8, 0, 0)
+        }
+
+            aside ul a:hover {
+                background: rgb(230, 0, 111);
+                color: white;
+                border-radius: 3px;
+            }
+
+.moveDown {
+    top: 158px;
+}
+
+@media (max-width: 767px) {
+    aside {
+        top: 90px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 558px) {
+    aside {
+        display: grid;
+        position: initial;
+        top: 90px;
+    }
+
+    .moved-right {
+        margin: 20px 0px 0px 0px;
+    }
+
+    section.home-page {
+        width: fit-content
+    }
+
+    div.home-page-icons a {
+        width: 80px;
+    }
+}
+
+a.button {
+    display: block;
+    padding: 5px 15px;
+    margin: 0px 5px;
+    background: rgb(205, 208, 211);
+    color: rgb(86, 40, 129);
+    border-radius: 3px;
+    text-decoration: none;
+}
+
+    a.button:hover {
+        background: rgb(13, 246, 203);
+        color: white;
+    }
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+    table td, table th {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+
+    table tr:nth-child(even) {
+        background-color: rgba(181, 35, 35, 0);
+    }
+
+    table tr:hover {
+        background-color: rgb(230, 0, 111);
+    }
+
+    table th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: rgba(181, 35, 35, 0.71);
+        color: white;
+    }
+
+div.tasks-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+@media (max-width: 1000px) {
+    div.tasks-grid {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 10px;
+    }
+}
+
+@media (min-width: 1200px) {
+    body > div.container {
+        max-width: 2000px;
+    }
+}
+
+div.tasks-grid div.task h1 {
+    background: rgba(181, 35, 35, 0.71);
+    padding: 8px 10px;
+    border-radius: 2px;
+}
+
+table.task-entry {
+    margin: 10px 0px;
+}
+
+    table.task-entry th {
+        width: 120px;
+    }
+
+    table.task-entry td {
+        width: 100%;
+        display: -webkit-box;
+        -webkit-line-clamp: 4; /* number of lines to show */
+        -webkit-box-orient: vertical;
+        word-break: break-word;
+    }
+
+        table.task-entry td div.description {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 4; /* number of lines to show */
+            -webkit-box-orient: vertical;
+            word-break: break-word;
+        }
+
+td.description {
+    white-space: pre-wrap;
+}
+
+table.task-details {
+    margin-bottom: 20px;
+}
+
+    table.task-details th {
+        width: 120px;
+    }
+
+    table.task-details tr {
+        word-break: break-word;
+    }
+
+form table {
+    max-width: 800px;
+    margin: 0px auto 10px auto;
+}
+
+    form table input, form table textarea, form table select {
+        width: 100%;
+    }
+
+    form table th {
+        width: 110px;
+    }
+
+input.btn {
+    padding: 15px 30px;
+    border-radius: 10px;
+    outline: none;
+    background: rgb(181, 35, 35);;
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+    max-width: 800px;
+    font-size: 1.2em;
+    color: black;
+}
+
+table.tasks-entry #Description {
+    height: 15em;
+}

@@ -1,0 +1,23 @@
+﻿@model TaskFormModel
+
+<table class="tasks-entry form">
+    <tr>
+        <th>
+            <label asp-for="Title"></label>
+        </th>
+        <td style="background: white;">
+            <input asp-for="Title" class="form-control" placeholder="Title...">
+            <span asp-validation-for="Title" class="small text-danger"></span>
+        </td>
+    </tr>
+    <tr>
+        <th>
+            <label asp-for="Description"></label>
+        </th>
+        <td  style="background: white;">
+            <textarea asp-for="Description" class="form-control" placeholder="Description..."></textarea>
+            <span asp-validation-for="Description" class="small text-danger"></span>
+        </td>
+        <textarea asp-for="ProjectId" class="form-control" placeholder="Description..." style="display: none;">@Model.ProjectId</textarea>
+    </tr>
+</table>
